@@ -1,21 +1,17 @@
 {
-    desription = "Flake for terow-rist user of nix servers ;)";
+    description = "Flake for terow-rist user of nix servers ;)";
 
     inputs = {
         home-manager = {
             url = "github:nix-community/home-manager";
-            inputs.nixpkgs.follows = "nixpkgs";
         };
     };
     
     outputs = {home-manager, ...}:
-    let 
-        system = "x86_64-linux";
-    in 
     {
         homeConfigurations.terow-rist = home-manager.lib.homeManagerConfiguration {
-            pkgs = nixpkgs.legacyPackages.${system};
+            pkgs = home-manager.inputs.nixpkgs.legacyPackages.${"x86_64-linux"};
             modules = [ ./home.nix ];
         };
-    }
+    };
 }
