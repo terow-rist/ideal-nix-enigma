@@ -16,11 +16,11 @@
     ];
 
     programs.bash = {
-        enable = true;
+	enable = true;
         shellAliases = {
             ls = "ls --color=auto";
             ll = "ls -l --color=auto";
-            la = "ls -A --color=auto";
+            la = "ls -al --color=auto";
             l = "ls -CF --color=auto";
             grep = "grep --color=auto";
         };
