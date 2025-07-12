@@ -15,7 +15,7 @@
     {
         homeConfigurations.terow-rist = home-manager.lib.homeManagerConfiguration {
             pkgs = nixpkgs.legacyPackages.${system};
-            modules = [ ./modules/home.nix ];
+            modules = [ ./home.nix ];
         };
     }
 }
